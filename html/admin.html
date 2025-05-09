@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel de Administrador</title>
+  <link rel="stylesheet" href="../css/admin.css"> <!-- Ajustada la ruta -->
+</head>
+<body>
+  <div id="admin-panel" class="container">
+    <header>
+      <h2>Bienvenido al Panel de Administrador</h2>
+      <p>Selecciona una de las siguientes opciones para gestionar las reservas.</p>
+    </header>
+
+    <div class="admin-menu">
+      <div class="card">
+        <h3>Aprobar o Rechazar Reservas</h3>
+        <p>Ver y aprobar o rechazar las solicitudes de reserva.</p>
+        <button onclick="window.location.href='aprobar-rechazar.html'">Ir</button>
+      </div>
+
+      <div class="card">
+        <h3>Consultar Reservas Activas</h3>
+        <p>Revisa las reservas que ya han sido aprobadas.</p>
+        <button onclick="window.location.href='reservas-activas.html'">Ir</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
