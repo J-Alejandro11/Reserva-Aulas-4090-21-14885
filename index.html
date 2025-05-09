@@ -6,8 +6,16 @@
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+
+  <!-- Pantalla de elección -->
+  <div id="seleccion" class="capa">
+    <h2>Bienvenido</h2>
+    <button onclick="mostrarFormulario('registro')">Registrarse</button>
+    <button onclick="mostrarFormulario('login')">Iniciar Sesión</button>
+  </div>
+
   <!-- Registro -->
-  <div id="registro" class="capa">
+  <div id="registro" class="capa" style="display: none;">
     <h2>Registro de Alumno</h2>
     <form onsubmit="mostrarLogin(); return false;">
       <label for="nombre">Nombre completo:</label>
@@ -38,29 +46,35 @@
   </div>
 
   <script>
+    function mostrarFormulario(tipo) {
+      document.getElementById("seleccion").style.display = "none";
+      document.getElementById(tipo).style.display = "block";
+    }
+
     function mostrarLogin() {
-      // Esconde el formulario de registro y muestra el de inicio de sesión
       document.getElementById("registro").style.display = "none";
       document.getElementById("login").style.display = "block";
     }
 
     function redirigirAlPanel() {
-      // Obtener el correo y la contraseña ingresados
       const correo = document.getElementById("correo-login").value;
       const password = document.getElementById("password-login").value;
 
-      // Validación simple para el correo y la contraseña (esto normalmente sería realizado en el backend)
       if (correo === "alumno@miumg.edu.gt" && password === "1234") {
-        // Si las credenciales son correctas, redirige al panel del alumno (en la carpeta html)
         window.location.href = "html/panel.html";
       } else if (correo === "admin@miumg.edu.gt" && password === "admin123") {
-        // Si las credenciales son para administrador, redirige al panel de administración (en la carpeta html)
         window.location.href = "html/admin.html";
       } else {
-        // Si las credenciales son incorrectas, muestra un mensaje de error
         alert("Correo o contraseña incorrectos");
       }
     }
   </script>
+
+<!-- Imágenes en la parte inferior -->
+<div class="imagenes-inferiores">
+  <img src="./img/img1.png" alt="Imagen 1">
+  <img src="./img/img2.png" alt="Imagen 2">
+</div>
+
 </body>
 </html>
